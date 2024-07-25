@@ -33,3 +33,25 @@ function myFun() {
 }
 
 console.log(typeof holyBooks);
+
+// +++++++++++++++++++++++++++++++++++++++++
+// Understanding Stack and Heap Concept
+
+//stack (Premitive) which gives you a copy from Stack memory not actual refrence
+let myYoutube = "Debugcodez"
+let anotherName = myYoutube
+
+anotherName = "Abdul Hafeez"
+console.log(myYoutube);
+console.log(anotherName);
+
+//stack (Nno - Premitive) which gives you an actual refrence from Heap memory
+const user1 = {
+    name: "Hafeez",
+    id: 123
+}
+
+const user2 = user1
+user2.name = "Abdul"
+console.log(user1);
+console.log(user2);
