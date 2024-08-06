@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove elements in DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLang("Python")
+    addLang("Typscript")
+
+    const addOptiLang = (langName) => {
+        const li = document.createElement('li')
+        li.append(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLang("C++")
+
+
+    //Edit
+    const secondLand = document.querySelector('li:nth-child(2)')
+    // secondLand.innerHTML = "Hafeez" //Not Optimized
+    const newli = document.createElement('li')
+    newli.textContent = "Hafeez"
+    secondLand.replaceWith(newli)
+
+    //Edit
+    const firstLang = document.querySelector('li:first-child')
+    // const thirdLang = document.querySelector('li:nth-child(3)')
+    // firstLang.replaceWith(thirdLang) //replace 1st
+    firstLang.outerHTML = `<li>Typscript</li>` //Ovewrite first-child
+
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
