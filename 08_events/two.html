@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Subscribe DebugCodez Channel</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const channelName = function () {
+        console.log(`DebugCodez`);  
+    }
+
+    const changeText = () => {
+        document.querySelector('h1').innerHTML = "The best series on my channel"
+    }
+    
+    
+    const timout = setTimeout(changeText, 2000);
+    // clearTimeout(timout) //want to stop on button event
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(timout)
+    })
+</script>
+</html>
