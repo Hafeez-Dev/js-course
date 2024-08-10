@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; background: #363636; color: aliceblue; text-align: center;">
+    <h1>It's My Birthday </br></br></h1>
+    <div style="position: absolute; top: 8%;">
+        <button id="start">Wish Me</button>
+        <button id="stop">Don't Wish</button>
+    </div>
+</body>
+<script>
+
+    let intervalId;  
+
+    //Text
+    const LoopText = () => {
+        document.querySelector('h1').innerHTML += `Happy Birthday Hafeez! 😒 </br>`
+        // console.log(`Happy Birthday 😒`);
+    }
+
+    //setInterval
+    document.querySelector('#start').addEventListener('click', () => {
+            intervalId =  setInterval(LoopText, 1000);
+    })
+
+    //clearInterval
+   document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(intervalId);
+        
+    })
+
+
+</script>
+</html>
